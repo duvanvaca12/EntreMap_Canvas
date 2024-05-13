@@ -20,6 +20,12 @@ add_action('admin_init', 'setup_search');
 
 add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
+add_action('wp_enqueue_scripts', 'enqueue_scripts');
+function enqueue_scripts()
+{
+    wp_enqueue_script('jquery');
+}
+
 function enqueue_custom_scripts()
 {
 
@@ -174,8 +180,11 @@ function create_submissions_page()
 
 function show_contact_form()
 {
+      ob_start();
       include MY_PLUGIN_PATH . '/includes/templates/contact-form.php';
+      return ob_get_clean();
 }
+
 
 function create_rest_endpoint()
 {
