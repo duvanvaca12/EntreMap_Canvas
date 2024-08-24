@@ -47,3 +47,5 @@ function ddfb_render_form_builder() {
     <?php
     return ob_get_clean();
 }
+add_shortcode('ddfb_form_builder', 'ddfb_render_form_builder');
+
