@@ -36,6 +36,7 @@ function ddfb_render_form_builder() {
             <h3>Components</h3>
             <div class="ddfb-component" data-type="button">Button</div>
             <div class="ddfb-component" data-type="text">Text Field</div>
+            <div class="ddfb-component" data-type="input">Input Field</div>
             <!-- Add more components as needed -->
         </div>
         <div id="ddfb-form-area">
@@ -46,4 +47,3 @@ function ddfb_render_form_builder() {
     <?php
     return ob_get_clean();
 }
-add_shortcode('ddfb_form_builder', 'ddfb_render_form_builder');
