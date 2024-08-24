@@ -29,25 +29,35 @@ add_action('wp_enqueue_scripts', 'ddfb_enqueue_scripts');
 
 
 function ddfb_render_form_builder() {
+    // Get the selected elements from the database
+    $elements = get_option('ddfb_selected_elements', array());
+
     ob_start();
     ?>
-    <div id="ddfb-form-builder">
-        <div id="ddfb-toolbox">
-            <h3>Components</h3>
-            <div class="ddfb-component" data-type="button">Button testing</div>
-            <div class="ddfb-component" data-type="text">Text Field</div>
-            <div class="ddfb-component" data-type="input">Input Field</div>
-            <!-- Add more components as needed -->
-        </div>
-        <div id="ddfb-form-area">
-            <h3>Your Form</h3>
-            <div id="ddfb-drop-area"></div>
-        </div>
+    <div id="ddfb-rendered-elements">
+        <?php foreach ($elements as $element): ?>
+            <div class="ddfb-element-item">
+                <?php
+                switch ($element) {
+                    case 'button':
+                        echo '<button type="button">Button</button>';
+                        break;
+                    case 'input':
+                        echo '<input type="text" placeholder="Input Field" />';
+                        break;
+                    case 'checkbox':
+                        echo '<label><input type="checkbox" /> Checkbox</label>';
+                        break;
+                }
+                ?>
+            </div>
+        <?php endforeach; ?>
     </div>
     <?php
     return ob_get_clean();
 }
 add_shortcode('ddfb_form_builder', 'ddfb_render_form_builder');
+
 
 
 // Add a menu item for the plugin settings page
@@ -69,19 +79,32 @@ add_action('admin_menu', 'ddfb_add_admin_menu');
 function ddfb_settings_page_content() {
     ?>
     <div class="wrap">
-        <h1>Drag and Drop Form Builder Settings</h1>
-        <form method="post" action="options.php">
-            <?php
-            // Output security fields for the registered setting "ddfb_settings"
-            settings_fields('ddfb_settings_group');
-            // Output setting sections and their fields
-            do_settings_sections('ddfb-settings');
-            // Output save settings button
-            submit_button();
-            ?>
+        <h1>Form Elements Selection</h1>
+        <form method="post" action="">
+            <p>Select an element to render on the frontend:</p>
+            <button type="submit" name="ddfb_element" value="button" class="button button-primary">Add Button</button>
+            <button type="submit" name="ddfb_element" value="input" class="button button-primary">Add Input Field</button>
+            <button type="submit" name="ddfb_element" value="checkbox" class="button button-primary">Add Checkbox</button>
         </form>
     </div>
     <?php
+
+    // Handle form submission
+    if (isset($_POST['ddfb_element'])) {
+        $element = sanitize_text_field($_POST['ddfb_element']);
+        ddfb_save_element($element);
+    }
+}
+
+function ddfb_save_element($element) {
+    // Get the current elements from the database
+    $elements = get_option('ddfb_selected_elements', array());
+
+    // Add the new element to the array
+    $elements[] = $element;
+
+    // Update the option in the database
+    update_option('ddfb_selected_elements', $elements);
 }
 
 
