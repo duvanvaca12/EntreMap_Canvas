@@ -34,7 +34,7 @@ function ddfb_render_form_builder() {
     <div id="ddfb-form-builder">
         <div id="ddfb-toolbox">
             <h3>Components</h3>
-            <div class="ddfb-component" data-type="button">Button</div>
+            <div class="ddfb-component" data-type="button">Button testing</div>
             <div class="ddfb-component" data-type="text">Text Field</div>
             <div class="ddfb-component" data-type="input">Input Field</div>
             <!-- Add more components as needed -->

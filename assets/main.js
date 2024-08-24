@@ -16,6 +16,9 @@ jQuery(document).ready(function($) {
                 case 'text':
                     newComponent.html('<input type="text" placeholder="Text Field" />');
                     break;
+                case 'input':
+                    newComponent.html('<input type="text" placeholder="Input Field" />');
+                    break;
                 // Add more case blocks for different components
             }
 
