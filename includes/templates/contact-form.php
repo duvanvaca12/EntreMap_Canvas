@@ -2,7 +2,7 @@
 <div id="form_success" style="background-color:green; color:#fff;"></div>
 <div id="form_error" style="background-color:red; color:#fff;"></div>
 
-<form id="enquiry_form">
+<form class="form-style" id="enquiry_form">
 
 
       <?php wp_nonce_field('wp_rest');?>
