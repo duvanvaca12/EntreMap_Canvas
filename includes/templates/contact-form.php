@@ -2,26 +2,29 @@
 <div id="form_success" style="background-color:green; color:#fff;"></div>
 <div id="form_error" style="background-color:red; color:#fff;"></div>
 
-<form class="form-style" id="enquiry_form">
+<div class="form-style">
+      <form id="enquiry_form">
 
 
-      <?php wp_nonce_field('wp_rest');?>
+            <?php wp_nonce_field('wp_rest');?>
 
-      <label>Name</label><br />
-      <input type="text" name="name"><br /><br />
+            <label>Name</label><br />
+            <input type="text" name="name"><br /><br />
 
-      <label>Phone</label><br />
-      <input type="text" name="phone"><br /><br />
+            <label>Phone</label><br />
+            <input type="text" name="phone"><br /><br />
 
-      <label>Email</label><br />
-      <input type="text" name="email"><br /><br />
+            <label>Email</label><br />
+            <input type="text" name="email"><br /><br />
 
-      <label>Message</label><br />
-      <textarea name="message"></textarea><br /><br />
+            <label>Message</label><br />
+            <textarea name="message"></textarea><br /><br />
 
-      <button type="submit">Submit form</button>
+            <button type="submit">Submit form</button>
 
-</form>
+      </form>
+
+</div>
 
 <script>
 
