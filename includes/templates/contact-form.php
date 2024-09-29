@@ -10,106 +10,105 @@
             <input type="hidden" name="email" id="email">
             <input type="hidden" name="message" id="message">
       </form>
-            <?php wp_nonce_field('wp_rest');?>
 
       <div class="flex justify-center items-center h-screen">
             <div class="w-full max-w-3xl mx-6  bg-white p-8 shadow-md rounded-lg transition-all duration-500 ease-in-out transform">
                   
                   <!-- Form Step 1 -->
                   <div id="step-1" class="space-y-8 step active transition-opacity duration-500 ease-in-out">
-                  <div class="text-center mb-6 space-y-4">
-                        <h1 class="text-3xl font-semibold">Welcome to the Entremap Canvas</h1>
-                        <p class="text-gray-500">let's start with the <strong>10 Steps</strong> of the Entreprenurial model</p>
-                  </div>
-                  <div class="flex justify-center">
-                        <button class="bg-emerald-800 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Get Started</button>
-                  </div>
-                  <div class="flex justify-center mt-4 space-x-1">
-                        <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  </div>
-                  </div>
+                        <div class="text-center mb-6 space-y-4">
+                              <h1 class="text-3xl font-semibold">Welcome to the Entremap Canvas</h1>
+                              <p class="text-gray-500">let's start with the <strong>10 Steps</strong> of the Entreprenurial model</p>
+                        </div>
+                        <div class="flex justify-center">
+                              <button class="bg-emerald-800 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Get Started</button>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-1">
+                              <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                        </div>
+                        </div>
 
 
                   <!-- Problem Opportunity - PT2 -->
                   <div id="step-2" class="max-w-3xl step hidden opacity-0 transition-opacity duration-500 ease-in-out">
-                  <div class="text-center mb-6">
-                        <h1 class="text-2xl font-semibold mb-4">Problem / Opportunity</h1>
-                        <p class="text-gray-500">When/where does the problem/opportunity occur and what causes it?</p>
-                  </div>
-                  <div class="mb-4">
-                        <label for="text" class="block text-gray-700 mb-2">What do customers do to fix the problem?</label>
-                        <input id="email" type="email" class="w-full p-3 border rounded-md" />
-                  </div>
+                        <div class="text-center mb-6">
+                              <h1 class="text-2xl font-semibold mb-4">Problem / Opportunity</h1>
+                              <p class="text-gray-500">When/where does the problem/opportunity occur and what causes it?</p>
+                        </div>
+                        <div class="mb-4">
+                              <label for="name-input" class="block text-gray-700 mb-2">What do customers do to fix the problem?</label>
+                              <input id="name-input" type="text" class="w-full p-3 border rounded-md" />
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">What is the emotional and measurable impact of the problem (with units)?</label>
-                        <input id="email" type="email" class="w-full p-3 border rounded-md" />
-                  </div>
+                        <div class="mb-4">
+                              <label for="phone-input" class="block text-gray-700 mb-2">What is the emotional and measurable impact of the problem (with units)?</label>
+                              <input id="phone-input" type="text" class="w-full p-3 border rounded-md" />
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">What are the disadvantages of the alternatives?</label>
-                        <input id="email" type="email" class="w-full p-3 border rounded-md" />
-                  </div>
+                        <div class="mb-4">
+                              <label for="email-input" class="block text-gray-700 mb-2">What are the disadvantages of the alternatives?</label>
+                              <input id="email-input" type="text" class="w-full p-3 border rounded-md" />
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">Will customers pay for it? If not, who will?</label>
-                        <input id="email" type="email" class="w-full p-3 border rounded-md" />
-                  </div>
-                  <div class="flex justify-between">
-                        <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="prevStep()">Back</button>
-                        <button class="bg-emerald-900 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Next</button>
-                  </div>
-                  <div class="flex justify-center mt-4 space-x-1">
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  </div>
+                        <div class="mb-4">
+                              <label for="message-input" class="block text-gray-700 mb-2">Will customers pay for it? If not, who will?</label>
+                              <input id="message-input" type="text" class="w-full p-3 border rounded-md" />
+                        </div>
+                        <div class="flex justify-between">
+                              <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="prevStep()">Back</button>
+                              <button class="bg-emerald-900 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Next</button>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-1">
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                        </div>
                   </div>
 
                   <!-- Step #3 -->
                   <div id="step-3" class="max-w-3xl step hidden opacity-0 transition-opacity duration-500 ease-in-out">
-                  <div class="text-center mb-6">
-                        <h1 class="text-2xl font-semibold mb-4">Customer Segments</h1>
-                        <p class="text-gray-500"> Segment your beachhead market - customers/users who have the problem/use similar services/buy similar products, in similar sales cycles expecting similar value <br> (new canvas for each customer segment): </br> </p>
-                  </div>
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">List the characteristics of your ideal customers</label>
-                        <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
-                  </div>
+                        <div class="text-center mb-6">
+                              <h1 class="text-2xl font-semibold mb-4">Customer Segments</h1>
+                              <p class="text-gray-500"> Segment your beachhead market - customers/users who have the problem/use similar services/buy similar products, in similar sales cycles expecting similar value <br> (new canvas for each customer segment): </br> </p>
+                        </div>
+                        <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">List the characteristics of your ideal customers</label>
+                              <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">Demographic/Geographic/Psychographic/Behavioural characteristics?</label>
-                        <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
-                  </div>
+                        <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">Demographic/Geographic/Psychographic/Behavioural characteristics?</label>
+                              <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">Who are your Customer and End-User Personas?</label>
-                        <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
-                  </div>
+                        <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">Who are your Customer and End-User Personas?</label>
+                              <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">Calculate TAM/SAM/SOM</label>
-                        <input id="email" type="number" class="w-full p-3 border rounded-md" />
-                  </div>
+                        <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">Calculate TAM/SAM/SOM</label>
+                              <input id="email" type="number" class="w-full p-3 border rounded-md" />
+                        </div>
 
-                  <div class="mb-4">
-                        <label for="email" class="block text-gray-700 mb-2">List your first 10 customers</label>
-                        <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
-                  </div>
-                  <div class="flex justify-between">
-                        <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="prevStep()">Back</button>
-                        <button class="bg-emerald-900 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Next</button>
-                  </div>
-                  <div class="flex justify-center mt-4 space-x-1">
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                        <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
-                  </div>
+                        <div class="mb-4">
+                              <label for="email" class="block text-gray-700 mb-2">List your first 10 customers</label>
+                              <textarea id="email" type="email" class="w-full p-3 border rounded-md"></textarea>
+                        </div>
+                        <div class="flex justify-between">
+                              <button class="bg-gray-300 text-gray-700 px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="prevStep()">Back</button>
+                              <button class="bg-emerald-900 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105" onclick="nextStep()">Next</button>
+                        </div>
+                        <div class="flex justify-center mt-4 space-x-1">
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-emerald-900 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                              <div class="w-3 h-3 bg-gray-300 rounded-full"></div>
+                        </div>
                   </div>
 
                   <!-- Part #4 -->
