@@ -408,16 +408,16 @@
 
       function showStep(step) {
             for (let i = 1; i <= totalSteps; i++) {
-            const stepDiv = document.getElementById(`step-${i}`);
-            if (i === step) {
-                  stepDiv.classList.remove('hidden');
-                  stepDiv.classList.remove('opacity-0');
-                  stepDiv.classList.add('opacity-100');
-            } else {
-                  stepDiv.classList.add('hidden');
-                  stepDiv.classList.add('opacity-0');
-                  stepDiv.classList.remove('opacity-100');
-            }
+                  const stepDiv = document.getElementById(`step-${i}`);
+                  if (i === step) {
+                        stepDiv.classList.remove('hidden');
+                        stepDiv.classList.remove('opacity-0');
+                        stepDiv.classList.add('opacity-100');
+                  } else {
+                        stepDiv.classList.add('hidden');
+                        stepDiv.classList.add('opacity-0');
+                        stepDiv.classList.remove('opacity-100');
+                  }
             }
       }
 
@@ -427,17 +427,17 @@
                   currentStep++;      
                   showStep(currentStep);
             }
-            if (currentStep < totalSteps) {
+            if ((currentStep < totalSteps) && (currentStep !== 1)) {
                   collectStepData(currentStep);  // Collect data on this step
-            currentStep++;
-            showStep(currentStep);
+                  currentStep++;
+                  showStep(currentStep);
             }
       }
 
       function prevStep() {
             if (currentStep > 1) {
-            currentStep--;
-            showStep(currentStep);
+                  currentStep--;
+                  showStep(currentStep);
             }
       }
 
