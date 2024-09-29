@@ -423,7 +423,7 @@
 
       function nextStep() {
             if (currentStep < totalSteps) {
-            collectStepData(currentStep);  // Collect data on this step
+            // collectStepData(currentStep);  // Collect data on this step
             currentStep++;
             showStep(currentStep);
             }
