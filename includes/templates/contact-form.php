@@ -402,7 +402,7 @@
       </div>
 </div>
 <script>
-      let currentStep = 1;
+      var currentStep = 1;
       const totalSteps = 12;
       var stepData = {};  // Store step data
 
