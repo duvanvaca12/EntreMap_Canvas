@@ -5,8 +5,11 @@
 <div class="form-style">
       <form id="enquiry_form" style="display:none;">
             <?php wp_nonce_field('wp_rest');?>
-
-
+            <input type="hidden" name="name" id="name">
+            <input type="hidden" name="phone" id="phone">
+            <input type="hidden" name="email" id="email">
+            <input type="hidden" name="message" id="message">
+      </form>
 
       <div class="flex justify-center items-center h-screen">
             <div class="w-full max-w-3xl mx-6  bg-white p-8 shadow-md rounded-lg transition-all duration-500 ease-in-out transform">
@@ -492,4 +495,3 @@
 
 
 </script>
-
