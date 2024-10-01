@@ -424,7 +424,7 @@
                   showStep(currentStep);
             }
             if ((currentStep < totalSteps) && (currentStep !== 1)) {
-                  collectStepData(currentStep);  // Collect data on this step
+                  // collectStepData(currentStep);  // Collect data on this step
                   currentStep++;
                   showStep(currentStep);
             }
