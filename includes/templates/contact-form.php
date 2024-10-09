@@ -1,5 +1,6 @@
 <div id="form_success" style="display:none; background-color:green; color:#fff;"></div>
 <div id="form_error" style="display:none; background-color:red; color:#fff;"></div>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 <div class="form-style">
 
@@ -384,3 +385,21 @@
 </div>
 </div>
 
+<!-- Chatbot Toggler Button -->
+<button class="chatbot-toggler">
+      <span class="material-symbols-outlined">mode_comment</span>
+</button>
+
+<!-- Chatbot Window -->
+<div class="chatbot">
+      <header>
+      <h2>Entremap Chatbot</h2>
+      </header>
+      <div class="chatbox">
+      <p>Hi there 👋 <br> How can I help you today?</p>
+      </div>
+      <div class="chat-input">
+      <textarea id="chatbot-input" placeholder="Enter a message..."></textarea>
+      <button id="send-btn">Send</button>
+      </div>
+</div>

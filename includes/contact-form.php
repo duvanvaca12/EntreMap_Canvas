@@ -145,64 +145,63 @@ function show_contact_form() {
 function create_rest_endpoint() {
       // Create endpoint for front end to connect to WordPress securely to post form data
       register_rest_route('v1/contact-form', 'submit', array(
-          'methods'             => 'POST',
-          'callback'            => 'handle_enquiry',
-          'permission_callback' => '__return_true', // Allow all users to access this endpoint
+            'methods'             => 'POST',
+            'callback'            => 'handle_enquiry',
+            'permission_callback' => '__return_true', // Allow all users to access this endpoint
       ));
-  }
-  
-  
-  function handle_enquiry($data) {
+}
+
+
+function handle_enquiry($data) {
       // Handle the form data that is posted
       $params = $data->get_params();
-  
+
       // Remove unneeded data from parameters
       unset($params['_wpnonce']);
       unset($params['_wp_http_referer']);
-  
+
       // Set up email headers
       $headers = [];
       $admin_email = get_bloginfo('admin_email');
       $admin_name = get_bloginfo('name');
-  
+
       // Set recipient email
       $recipient_email = get_option('contact_plugin_recipients');
       if (!$recipient_email) {
-          $recipient_email = $admin_email;
+            $recipient_email = $admin_email;
       }
-  
+
       $headers[] = "From: {$admin_name} <{$admin_email}>";
       $headers[] = "Reply-to: {$admin_name} <{$admin_email}>";
       $headers[] = "Content-Type: text/html";
-  
+
       $subject = "New enquiry submission";
-  
+
       $message = "<h1>New Submission:</h1>";
-  
+
       // Create a new submission post
       $postarr = [
-          'post_title'  => 'New Submission',
-          'post_type'   => 'submission',
-          'post_status' => 'publish',
+            'post_title'  => 'New Submission',
+            'post_type'   => 'submission',
+            'post_status' => 'publish',
       ];
-  
+
       $post_id = wp_insert_post($postarr);
-  
+
       // Loop through each field posted and sanitize it
       foreach ($params as $label => $value) {
-          $value = sanitize_textarea_field($value);
-          add_post_meta($post_id, $label, $value);
-          $message .= '<strong>' . esc_html(ucfirst(str_replace('-', ' ', $label))) . ':</strong> ' . nl2br(esc_html($value)) . '<br />';
+            $value = sanitize_textarea_field($value);
+            add_post_meta($post_id, $label, $value);
+            $message .= '<strong>' . esc_html(ucfirst(str_replace('-', ' ', $label))) . ':</strong> ' . nl2br(esc_html($value)) . '<br />';
       }
-  
+
       // Send the email
       wp_mail($recipient_email, $subject, $message, $headers);
-  
+
       $confirmation_message = "The message was sent successfully!";
       if (get_option('contact_plugin_message')) {
-          $confirmation_message = get_option('contact_plugin_message');
+            $confirmation_message = get_option('contact_plugin_message');
       }
-  
+
       return new WP_Rest_Response($confirmation_message, 200);
-  }
-  
+}

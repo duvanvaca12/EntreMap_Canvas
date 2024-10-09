@@ -2,8 +2,8 @@
 /**
  * 
  * Plugin name: Entremap Contact Plugin
- * Description: Entreamp canvas custom plugin to get all the leads
- * Version: 1.0.0
+ * Description: Entreamp canvas custom plugin
+ * Version: 1.1.0
  * Text Domain: contact-plugin
  * 
  */
