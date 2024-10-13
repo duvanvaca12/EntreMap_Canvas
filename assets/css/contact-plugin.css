@@ -1250,6 +1250,7 @@ background: #3DAE81; /* Changed color to green */
 border-radius: 50%;
 cursor: pointer;
 font-size: 24px;
+z-index: 9999;
 }
 
 .chatbot {
