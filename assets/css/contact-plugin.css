@@ -64,6 +64,7 @@ font-variation-settings: normal;
 */
 
 body {
+font-family: var(--wp--preset--font-family--body) !important;
 margin: 0;
 /* 1 */
 line-height: inherit;
@@ -137,7 +138,6 @@ code,
 kbd,
 samp,
 pre {
-font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 /* 1 */
 font-feature-settings: normal;
 /* 2 */
@@ -1273,7 +1273,6 @@ color: white;
 padding: 15px; /* Increased padding */
 text-align: center;
 font-size: 1.2rem; /* Larger font size */
-font-family: var(--wp--preset--font-family--body) !important;
 }
 
 .chatbox {
