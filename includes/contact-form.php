@@ -156,7 +156,7 @@ if ($query->is_main_query() && !empty($query->query['s'])) {
       $meta_keys = array(
             'problem-1', 'problem-2', 'problem-3', 'problem-4',
             'segments-1', 'segments-2', 'segments-3', 'segments-4', 'segments-5',
-            'value-1', 'value-2', 'value-3',
+            'value-1', 'value-2', 'value-3', 'email', 'name', 'phone'
       );
 
       $meta_keys_placeholder = implode(', ', array_fill(0, count($meta_keys), '%s'));
@@ -184,9 +184,9 @@ return $search;
 // Fills custom columns in the submission table
 function fill_submission_columns($column, $post_id) {
 switch ($column) {
-      case 'problem-1':
-      case 'segments-1':
-      case 'value-1':
+      case 'name':
+      case 'email':
+      case 'phone':
             echo esc_html(get_post_meta($post_id, $column, true)); // Display metadata in the column
             break;
 }
@@ -196,9 +196,9 @@ switch ($column) {
 function custom_submission_columns($columns) {
 $columns = array(
       'cb'          => $columns['cb'],
-      'problem-1'   => __('Problem 1', 'contact-plugin'),
-      'segments-1'  => __('Segments 1', 'contact-plugin'),
-      'value-1'     => __('Value 1', 'contact-plugin'),
+      'name'   => __('Name', 'contact-plugin'),
+      'email'  => __('Email', 'contact-plugin'),
+      'phone'     => __('Phone', 'contact-plugin'),
       'date'        => __('Date', 'contact-plugin'),
 );
 return $columns;
@@ -307,7 +307,7 @@ foreach ($params as $label => $value) {
 wp_mail($recipient_email, $subject, $message, $headers);
 
 // Send the confirmation message
-$confirmation_message = "The message was sent successfully!";
+$confirmation_message = "Thank you we will be in contact with you soon!";
 if (get_option('contact_plugin_message')) {
       $confirmation_message = get_option('contact_plugin_message');
 }

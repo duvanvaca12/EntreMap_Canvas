@@ -1,11 +1,11 @@
 jQuery(document).ready(function($) {
-    var currentStep = 1;
-    const totalSteps = 12; // Update the number of total steps based on actual form structure
-    var stepData = {};  // Object to store data across steps
+    var currentStep = 0;
+    const totalSteps = 12;
+    var stepData = {}; 
 
     // Show the appropriate step
     function showStep(step) {
-        for (let i = 1; i <= totalSteps; i++) {
+        for (let i = 0; i <= totalSteps; i++) {
             const stepDiv = document.getElementById(`step-${i}`);
             if (i === step) {
                 stepDiv.classList.remove('hidden');

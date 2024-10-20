@@ -10,13 +10,40 @@
 <div class="w-full max-w-3xl mx-6 bg-white p-8 shadow-md rounded-lg transition-all duration-500 ease-in-out transform">
 
       <!-- Form Step 1 -->
-      <div id="step-1" class="space-y-8 step active transition-opacity duration-500 ease-in-out">
+      <div id="step-0" class="space-y-8 step active transition-opacity duration-500 ease-in-out">
             <div class="text-center mb-6 space-y-4">
             <h1 class="text-3xl font-semibold">Welcome to the Entremap Canvas</h1>
             <p class="text-gray-500">Let's start with the <strong>10 Steps</strong> of the Entrepreneurial model</p>
             </div>
             <div class="flex justify-center">
             <button type="button" id="get-started" class="bg-emerald-800 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105">Get Started</button>
+            </div>
+      </div>
+
+            <!-- Problem Opportunity - Step 2 -->
+      <div id="step-1" class="max-w-3xl step hidden opacity-0 transition-opacity duration-500 ease-in-out">
+            <div class="text-center mb-6">
+            <h1 class="text-2xl font-semibold mb-4">About you</h1>
+            <p class="text-gray-500">Please first provide your information</p>
+            </div>
+            <div class="mb-4">
+            <label required for="name" class="block text-gray-700 mb-2">Name</label>
+            <input required id="name" type="text" class="w-full p-3 border rounded-md" />
+            </div>
+
+            <div class="mb-4">
+            <label required for="email" class="block text-gray-700 mb-2">Email</label>
+            <input required id="email" type="email" class="w-full p-3 border rounded-md" />
+            </div>
+
+            <div class="mb-4">
+            <label required for="phone" class="block text-gray-700 mb-2">Phone</label>
+            <input required id="phone" type="tel" class="w-full p-3 border rounded-md" />
+            </div>
+
+            <div class="flex justify-between">
+            
+            <button type="button" class="next-step bg-emerald-900 text-white px-6 py-3 rounded-lg focus:outline-none transition-transform hover:scale-105">Next</button>
             </div>
       </div>
 
@@ -99,7 +126,7 @@
       <div id="step-4" class="max-w-3xl step hidden opacity-0 transition-opacity duration-500 ease-in-out">
       <div class="text-center mb-6">
             <h1 class="text-2xl font-semibold mb-4">Unique Value</h1>
-            <p class="text-gray-500">SSingle, clear, compelling message to convert prospects. </p>
+            <p class="text-gray-500">Single, clear, compelling message to convert prospects. </p>
       </div>
       <div class="mb-4">
             <label for="value-1" class="block text-gray-700 mb-2">Full Life Cycle Use Case</label>

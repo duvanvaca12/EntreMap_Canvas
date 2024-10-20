@@ -64,7 +64,6 @@ font-variation-settings: normal;
 */
 
 body {
-font-family: var(--wp--preset--font-family--body) !important;
 margin: 0;
 /* 1 */
 line-height: inherit;
@@ -1258,13 +1257,14 @@ display: none; /* Initially hidden */
 position: fixed;
 right: 20px;
 bottom: 100px;
-width: 400px; /* Increased width */
+width: 30vw; /* Increased width */
 height: 500px; /* Increased height */
 background: white;
 border-radius: 10px;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 overflow: hidden;
 padding: 15px;
+z-index: 99;
 }
 
 
